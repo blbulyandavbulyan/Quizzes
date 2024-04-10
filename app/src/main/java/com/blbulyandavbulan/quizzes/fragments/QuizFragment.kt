@@ -104,7 +104,7 @@ class QuizFragment : Fragment() {
                 }
         }
         binding.goBackButton.setOnClickListener {
-            findNavController().navigate(R.id.action_QuizFragment_To_GreetingFragment)
+            findNavController().popBackStack()
         }
     }
 
