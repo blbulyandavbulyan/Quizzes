@@ -10,10 +10,14 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.core.view.allViews
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.blbulyandavbulan.quizzes.databinding.FragmentQuizBinding
 import com.blbulyandavbulan.quizzes.quiz.Quiz
+import com.blbulyandavbulan.quizzes.quiz.QuizStorage
 import com.google.android.material.radiobutton.MaterialRadioButton
+import java.util.stream.Collectors
 
 private const val QUIZ_PARAM = "QUIZ"
 
@@ -27,7 +31,7 @@ class QuizFragment : Fragment() {
     private var _binding: FragmentQuizBinding? = null
     private val binding: FragmentQuizBinding
         get() = _binding!!
-    private var answersRadioGroups: List<List<RadioGroup>>? = null
+    private var answersRadioGroups: List<RadioGroup>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +49,7 @@ class QuizFragment : Fragment() {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
         binding.quizzesLinearLayout
         val answersRadioGroups = mutableListOf<RadioGroup>()
+        this.answersRadioGroups = answersRadioGroups
         quiz?.questions?.forEach { question ->
             val context = requireContext()
             val questionTextView = TextView(context)
@@ -62,6 +67,7 @@ class QuizFragment : Fragment() {
             question.answers.forEach { answer ->
                 val answerRadioButton = MaterialRadioButton(context)
                 answerRadioButton.text = answer
+                answerRadioButton.id = View.generateViewId()
                 answerRadioButton.layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
@@ -77,9 +83,26 @@ class QuizFragment : Fragment() {
                 }
                 binding.quizzesLinearLayout.addView(radioGroup)
             }
+            radioGroup.check(radioGroup.getChildAt(0).id)
             answersRadioGroups.add(radioGroup)
         }
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.submitAnswers.setOnClickListener { _ ->
+            answersRadioGroups?.stream()
+                ?.map { it.indexOfChild(it.findViewById(it.checkedRadioButtonId)) }
+                ?.collect(Collectors.toList())?.let {answers->
+                    quiz?.let {
+                        val answer = QuizStorage.answer(it, answers)
+                        findNavController().navigate(R.id.action_QuizFragment_To_ResultsFragment, Bundle().apply {
+                            putString("RESULTS", answer)
+                        })
+                    }
+                }
+        }
     }
 
     override fun onDestroyView() {
