@@ -6,6 +6,11 @@ object QuizStorage {
         Locale.En -> quizEn
     }
 
+    fun getQuiz(): Quiz = getQuiz(
+        if (java.util.Locale.getDefault().language == "ru") Locale.Ru
+        else Locale.En
+    )
+
     fun answer(quiz: Quiz, answers: List<Int>): String = quiz
         .questions
         .zip(answers) { question, index -> question.feedback[index] }
