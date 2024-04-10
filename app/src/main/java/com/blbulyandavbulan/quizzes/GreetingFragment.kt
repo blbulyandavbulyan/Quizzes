@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.blbulyandavbulan.quizzes.databinding.FragmentGreetingBinding
+import com.blbulyandavbulan.quizzes.quiz.QuizStorage
 
 class GreetingFragment : Fragment() {
     private var _binding: FragmentGreetingBinding? = null
@@ -31,7 +33,9 @@ class GreetingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.continueButton.setOnClickListener {
-            // TODO: add processing here for continue button
+            findNavController().navigate(R.id.action_GreetingFragment_To_QuizFragment, Bundle().apply {
+                putSerializable("QUIZ", QuizStorage.getQuiz(QuizStorage.Locale.Ru))
+            });
         }
     }
 }
