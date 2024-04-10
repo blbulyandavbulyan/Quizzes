@@ -17,7 +17,6 @@ private const val RESULTS_PARAM = "RESULTS"
  * create an instance of this fragment.
  */
 class ResultsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var results: String? = null
     private var _binding: FragmentResultsBinding? = null
     private val binding: FragmentResultsBinding
@@ -54,14 +53,6 @@ class ResultsFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param results Parameter 1.
-         * @return A new instance of fragment ResultsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(results: String) =
             ResultsFragment().apply {
