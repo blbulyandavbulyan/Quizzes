@@ -1,4 +1,4 @@
-package com.blbulyandavbulan.quizzes
+package com.blbulyandavbulan.quizzes.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

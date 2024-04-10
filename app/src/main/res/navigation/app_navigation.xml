@@ -6,7 +6,7 @@
     app:startDestination="@id/GreatingFragment">
     <fragment
         android:id="@+id/GreatingFragment"
-        android:name="com.blbulyandavbulan.quizzes.GreetingFragment"
+        android:name="com.blbulyandavbulan.quizzes.fragments.GreetingFragment"
         tools:layout="@layout/fragment_greeting">
         <action
             android:id="@+id/action_GreetingFragment_To_QuizFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/QuizFragment"
-        android:name="com.blbulyandavbulan.quizzes.QuizFragment"
+        android:name="com.blbulyandavbulan.quizzes.fragments.QuizFragment"
         tools:layout="@layout/fragment_quiz">
         <action
             android:id="@+id/action_QuizFragment_To_ResultsFragment"
@@ -26,7 +26,7 @@
         app:startDestination="@id/ResultsFragment">
         <fragment
             android:id="@+id/ResultsFragment"
-            android:name="com.blbulyandavbulan.quizzes.ResultsFragment"
+            android:name="com.blbulyandavbulan.quizzes.fragments.ResultsFragment"
             tools:layout="@layout/fragment_results">
             <action
                 android:id="@+id/action_ResultsFragment_To_GreetingFragment"

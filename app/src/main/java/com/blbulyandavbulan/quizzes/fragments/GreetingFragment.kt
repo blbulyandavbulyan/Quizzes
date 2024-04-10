@@ -1,4 +1,4 @@
-package com.blbulyandavbulan.quizzes
+package com.blbulyandavbulan.quizzes.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.blbulyandavbulan.quizzes.R
 import com.blbulyandavbulan.quizzes.databinding.FragmentGreetingBinding
 import com.blbulyandavbulan.quizzes.quiz.QuizStorage
 

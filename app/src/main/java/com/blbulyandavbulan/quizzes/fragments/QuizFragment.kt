@@ -1,4 +1,4 @@
-package com.blbulyandavbulan.quizzes
+package com.blbulyandavbulan.quizzes.fragments
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -10,9 +10,9 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.RadioGroup
 import android.widget.TextView
-import androidx.core.view.allViews
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.blbulyandavbulan.quizzes.R
 import com.blbulyandavbulan.quizzes.databinding.FragmentQuizBinding
 import com.blbulyandavbulan.quizzes.quiz.Quiz
 import com.blbulyandavbulan.quizzes.quiz.QuizStorage
