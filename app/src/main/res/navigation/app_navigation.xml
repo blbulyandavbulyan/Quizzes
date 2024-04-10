@@ -18,22 +18,17 @@
         tools:layout="@layout/fragment_quiz">
         <action
             android:id="@+id/action_QuizFragment_To_ResultsFragment"
-            app:destination="@id/navigation" />
+            app:destination="@id/ResultsFragment" />
         <action
             android:id="@+id/action_QuizFragment_To_GreetingFragment"
-            app:destination="@id/GreatingFragment"/>
+            app:destination="@id/GreatingFragment" />
     </fragment>
-
-    <navigation
-        android:id="@+id/navigation"
-        app:startDestination="@id/ResultsFragment">
-        <fragment
-            android:id="@+id/ResultsFragment"
-            android:name="com.blbulyandavbulan.quizzes.fragments.ResultsFragment"
-            tools:layout="@layout/fragment_results">
-            <action
-                android:id="@+id/action_ResultsFragment_To_GreetingFragment"
-                app:destination="@id/GreatingFragment" />
-        </fragment>
-    </navigation>
+    <fragment
+        android:id="@+id/ResultsFragment"
+        android:name="com.blbulyandavbulan.quizzes.fragments.ResultsFragment"
+        tools:layout="@layout/fragment_results">
+        <action
+            android:id="@+id/action_ResultsFragment_To_QuizFragment"
+            app:destination="@id/QuizFragment" />
+    </fragment>
 </navigation>
