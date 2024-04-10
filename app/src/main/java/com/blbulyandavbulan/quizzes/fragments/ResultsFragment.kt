@@ -25,6 +25,7 @@ class ResultsFragment : Fragment() {
         arguments?.let {
             results = it.getString(RESULTS_PARAM)
         }
+        // TODO: добавить сюда обработку кнопки "назад" на телефоне, сделать так чтобы она вела на стартовый экран 
     }
 
     override fun onCreateView(
