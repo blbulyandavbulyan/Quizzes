@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.blbulyandavbulan.quizzes.R
 import com.blbulyandavbulan.quizzes.databinding.FragmentResultsBinding
 
 private const val RESULTS_PARAM = "RESULTS"
@@ -40,6 +42,9 @@ class ResultsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         results?.let {
             binding.resultsTextView.text = it
+        }
+        binding.startAgainButton.setOnClickListener {
+            findNavController().navigate(R.id.action_ResultsFragment_To_GreetingFragment)
         }
     }
 
