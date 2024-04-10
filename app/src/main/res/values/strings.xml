@@ -4,4 +4,5 @@
     <string name="app_logo_description">App logo</string>
     <string name="submit">Submit</string>
     <string name="start_again">Start again</string>
+    <string name="go_back">Go back</string>
 </resources>
