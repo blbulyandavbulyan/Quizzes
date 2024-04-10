@@ -7,15 +7,30 @@
     <fragment
         android:id="@+id/GreatingFragment"
         android:name="com.blbulyandavbulan.quizzes.GreetingFragment"
-        tools:layout="@layout/fragment_greeting"
-        >
+        tools:layout="@layout/fragment_greeting">
         <action
             android:id="@+id/action_GreetingFragment_To_QuizFragment"
-            app:destination="@id/QuizFragment"/>
+            app:destination="@id/QuizFragment" />
     </fragment>
     <fragment
         android:id="@+id/QuizFragment"
         android:name="com.blbulyandavbulan.quizzes.QuizFragment"
-        tools:layout="@layout/fragment_quiz"/>
+        tools:layout="@layout/fragment_quiz">
+        <action
+            android:id="@+id/action_QuizFragment_To_ResultsFragment"
+            app:destination="@id/navigation" />
+    </fragment>
 
+    <navigation
+        android:id="@+id/navigation"
+        app:startDestination="@id/ResultsFragment">
+        <fragment
+            android:id="@+id/ResultsFragment"
+            android:name="com.blbulyandavbulan.quizzes.ResultsFragment"
+            tools:layout="@layout/fragment_results">
+            <action
+                android:id="@+id/action_ResultsFragment_To_GreetingFragment"
+                app:destination="@id/GreatingFragment" />
+        </fragment>
+    </navigation>
 </navigation>
