@@ -1,5 +1,7 @@
 package com.blbulyandavbulan.quizzes.quiz
 
-interface Quiz {
+import java.io.Serializable
+
+interface Quiz : Serializable{
     val questions: List<Question>
 }
