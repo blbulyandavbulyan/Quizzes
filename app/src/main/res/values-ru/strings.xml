@@ -2,4 +2,5 @@
 <resources>
     <string name="continue_text">Продолжить</string>
     <string name="app_logo_description">Логотип приложения</string>
+    <string name="submit">Отправить</string>
 </resources>
