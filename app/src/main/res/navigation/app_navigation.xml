@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_QuizFragment_To_ResultsFragment"
             app:destination="@id/navigation" />
+        <action
+            android:id="@+id/action_QuizFragment_To_GreetingFragment"
+            app:destination="@id/GreatingFragment"/>
     </fragment>
 
     <navigation
