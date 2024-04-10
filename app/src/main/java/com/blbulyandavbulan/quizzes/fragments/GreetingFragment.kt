@@ -31,8 +31,7 @@ class GreetingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.continueButton.setOnClickListener {
             findNavController().navigate(R.id.action_GreetingFragment_To_QuizFragment, Bundle().apply {
-                val locale = QuizStorage.Locale.Ru // FIXME: добавить здесь корректное получение локали
-                putSerializable("QUIZ", QuizStorage.getQuiz(locale))
+                putSerializable("QUIZ", QuizStorage.getQuiz())
             });
         }
     }
