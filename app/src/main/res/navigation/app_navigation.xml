@@ -30,5 +30,10 @@
         <action
             android:id="@+id/action_ResultsFragment_To_QuizFragment"
             app:destination="@id/QuizFragment" />
+        <action
+            android:id="@+id/action_ResultsFragment_To_GreetingFragment"
+            app:destination="@id/GreatingFragment"
+            app:popUpTo="@id/GreatingFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

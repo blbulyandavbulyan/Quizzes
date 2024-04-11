@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.blbulyandavbulan.quizzes.R
 import com.blbulyandavbulan.quizzes.databinding.FragmentResultsBinding
 
 private const val RESULTS_PARAM = "RESULTS"
@@ -25,7 +27,6 @@ class ResultsFragment : Fragment() {
         arguments?.let {
             results = it.getString(RESULTS_PARAM)
         }
-        // TODO: добавить сюда обработку кнопки "назад" на телефоне, сделать так чтобы она вела на стартовый экран 
     }
 
     override fun onCreateView(
@@ -44,6 +45,9 @@ class ResultsFragment : Fragment() {
         }
         binding.startAgainButton.setOnClickListener {
             findNavController().popBackStack()
+        }
+        requireActivity().onBackPressedDispatcher.addCallback (this){
+            findNavController().navigate(R.id.action_ResultsFragment_To_GreetingFragment)
         }
     }
 
