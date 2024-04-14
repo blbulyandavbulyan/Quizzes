@@ -77,12 +77,8 @@ class QuizFragment : Fragment() {
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
                 )
-                radioGroup.parent?.let {//что-то не понятное взятое с форумов, без него вываливается в исключение
-                    // что у view уже есть parent
-                    (it as ViewGroup).removeView(radioGroup)
-                }
-                binding.quizzesLinearLayout.addView(radioGroup)
             }
+            binding.quizzesLinearLayout.addView(radioGroup)
             radioGroup.check(radioGroup.getChildAt(0).id)
             answersRadioGroups.add(radioGroup)
         }
