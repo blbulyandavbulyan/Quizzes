@@ -79,7 +79,7 @@ class QuizFragment : Fragment() {
                 )
             }
             binding.quizzesLinearLayout.addView(radioGroup)
-            radioGroup.check(radioGroup.getChildAt(0).id)
+            radioGroup.check(radioGroup.getChildAt(0).id)//выбор первого варианта ответа чтобы у пользователя не было возможности ничего не выбирать
             answersRadioGroups.add(radioGroup)
         }
         return binding.root
