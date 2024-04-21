@@ -1,5 +1,6 @@
 package com.blbulyandavbulan.quizzes.fragments
 
+import android.animation.AnimatorInflater
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -48,6 +49,10 @@ class ResultsFragment : Fragment() {
         }
         requireActivity().onBackPressedDispatcher.addCallback (this){
             findNavController().navigate(R.id.action_ResultsFragment_To_GreetingFragment)
+        }
+        AnimatorInflater.loadAnimator(context, R.animator.left_right_rotation).apply {
+            setTarget(binding.startAgainButton)
+            start()
         }
     }
 
