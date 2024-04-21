@@ -5,4 +5,5 @@
     <string name="submit">Отправить</string>
     <string name="start_again">Начать занаво</string>
     <string name="go_back">Назад</string>
+    <string name="select_date_of_birth">Выберите дату рождения</string>
 </resources>
