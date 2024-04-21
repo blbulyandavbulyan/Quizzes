@@ -54,6 +54,11 @@ class ResultsFragment : Fragment() {
             setTarget(binding.startAgainButton)
             start()
         }
+        binding.resultsTextScrollView.alpha = 0f
+        binding.resultsTextScrollView.animate().apply {
+            duration = 500
+            alpha(1.0f)
+        }.start()
     }
 
     override fun onDestroyView() {
