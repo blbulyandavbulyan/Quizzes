@@ -9,6 +9,10 @@
         android:name="com.blbulyandavbulan.quizzes.fragments.GreetingFragment"
         tools:layout="@layout/fragment_greeting">
         <action
+            app:enterAnim="@animator/my_enter_animation"
+            app:popEnterAnim="@animator/my_enter_animation"
+            app:exitAnim="@animator/my_exit_animation"
+            app:popExitAnim="@animator/my_exit_animation"
             android:id="@+id/action_GreetingFragment_To_QuizFragment"
             app:destination="@id/QuizFragment" />
     </fragment>
@@ -17,9 +21,17 @@
         android:name="com.blbulyandavbulan.quizzes.fragments.QuizFragment"
         tools:layout="@layout/fragment_quiz">
         <action
+            app:enterAnim="@animator/my_enter_animation"
+            app:popEnterAnim="@animator/my_enter_animation"
+            app:exitAnim="@animator/my_exit_animation"
+            app:popExitAnim="@animator/my_exit_animation"
             android:id="@+id/action_QuizFragment_To_ResultsFragment"
             app:destination="@id/ResultsFragment" />
         <action
+            app:enterAnim="@animator/my_enter_animation"
+            app:popEnterAnim="@animator/my_enter_animation"
+            app:exitAnim="@animator/my_exit_animation"
+            app:popExitAnim="@animator/my_exit_animation"
             android:id="@+id/action_QuizFragment_To_GreetingFragment"
             app:destination="@id/GreatingFragment" />
     </fragment>
@@ -28,9 +40,17 @@
         android:name="com.blbulyandavbulan.quizzes.fragments.ResultsFragment"
         tools:layout="@layout/fragment_results">
         <action
+            app:enterAnim="@animator/my_enter_animation"
+            app:popEnterAnim="@animator/my_enter_animation"
+            app:exitAnim="@animator/my_exit_animation"
+            app:popExitAnim="@animator/my_exit_animation"
             android:id="@+id/action_ResultsFragment_To_QuizFragment"
             app:destination="@id/QuizFragment" />
         <action
+            app:enterAnim="@animator/my_enter_animation"
+            app:popEnterAnim="@animator/my_enter_animation"
+            app:exitAnim="@animator/my_exit_animation"
+            app:popExitAnim="@animator/my_exit_animation"
             android:id="@+id/action_ResultsFragment_To_GreetingFragment"
             app:destination="@id/GreatingFragment"
             app:popUpTo="@id/GreatingFragment"
