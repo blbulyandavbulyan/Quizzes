@@ -52,4 +52,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.navigation.testing)
+    // https://mvnrepository.com/artifact/com.airbnb.android/lottie
+    implementation(libs.lottie)
 }
