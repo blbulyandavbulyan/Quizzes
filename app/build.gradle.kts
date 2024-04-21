@@ -1,8 +1,15 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("idea")
 }
 
+idea {
+    module {
+        isDownloadJavadoc = true
+        isDownloadSources = true
+    }
+}
 android {
     namespace = "com.blbulyandavbulan.quizzes"
     compileSdk = 34
@@ -42,6 +49,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    api(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     // Kotlin
