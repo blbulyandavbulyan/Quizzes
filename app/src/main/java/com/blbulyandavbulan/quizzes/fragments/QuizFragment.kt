@@ -81,6 +81,11 @@ class QuizFragment : Fragment() {
             binding.quizzesLinearLayout.addView(radioGroup)
             radioGroup.check(radioGroup.getChildAt(0).id)//выбор первого варианта ответа чтобы у пользователя не было возможности ничего не выбирать
             answersRadioGroups.add(radioGroup)
+            radioGroup.alpha = 0.0f
+            radioGroup.animate().apply {
+                duration = 700
+                alpha(1.0f)
+            }.start()
         }
         return binding.root
     }
